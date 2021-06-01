@@ -1,0 +1,39 @@
+; variables are not typed - and are global, no scoping
+let a "Hello, "
+let b "World!"
+
+; operator prescendence is PEMDAS
+; mathmatic statements are surrounded by `
+; you cannot add mathmatic statements together
+let math `58 + 23 * 68 - 323 / 34`
+
+; concat is a builtin function
+let c concat[a b]
+
+; all numerals are floating point
+let d 58.1
+
+; print is a builtin function
+print[c]
+
+; if statement
+if{c == "Hello, World!" or c == "Goodbye, world!" and d == 58.1}(
+    print["variable c is Hello, World!"]
+) ~ (
+    ; using '~' after an if statement means 'else'
+    print["variable c is " c]
+)
+
+
+; while loop that will calculate a factorial
+
+let n 5
+let p 1
+
+while{n > 0}(
+    set p `p * n`
+    set n `n - 1`
+)
+
+; you can initalize a variable as null
+let q
